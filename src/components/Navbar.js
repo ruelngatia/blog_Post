@@ -29,7 +29,7 @@ export default function Navbar() {
               </button>
               <ul
                 id="dropdown"
-                className=" flex-col space-y-5 text-sm font-medium min-w-max hidden group-hover:flex absolute z-20 p-3 rounded-lg border border-border-grey"
+                className=" bg-hovr-d-blue flex-col space-y-5 text-sm font-medium min-w-max hidden group-hover:flex absolute z-10 p-4 rounded-lg border border-border-grey"
               >
                 <li>Authors</li>
                 <li>Monthly archive</li>
@@ -47,7 +47,7 @@ export default function Navbar() {
         <ul className="flex flex-row items-center space-x-4">
           <li>Sign in</li>
           <li>
-            <button className="bg-sk-blue rounded-xl px-3 py-1">Sign Up</button>
+            <button className="bg-sk-blue rounded-2xl px-3 py-1">Sign Up</button>
           </li>
           <li>
             <SearchIcon />
