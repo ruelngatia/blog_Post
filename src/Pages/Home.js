@@ -81,7 +81,7 @@ export default function Home() {
             <h1 className="text-4xl ">Subscribe to Inros</h1>
             <p className="text-xl">Get all the latest posts delivered straight to your inbox.</p>
           </div>
-          <div className=" md:space-y-0 md:space-x-16 flex flex-col md:flex-row items-center gap-2">
+          <div className=" md:space-y-0 md:space-x-16 flex flex-col md:flex-row items-center gap-6">
             <input className=" w-full xl:w-max border rounded-3xl border-border-grey bg-hovr-d-blue pl-3 h-14 text-lg" placeholder="Your name"/>
             <input className=" w-full xl:w-max border rounded-3xl border-border-grey bg-hovr-d-blue pl-3 h-14 text-lg" placeholder="Your email address"/>
           </div>

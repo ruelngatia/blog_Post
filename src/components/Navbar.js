@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SearchIcon from "@mui/icons-material/Search";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DropDown from "./DropDown";
-
+import CloseIcon from '@mui/icons-material/Close';
 // import '../assets/dark-theme-logo.svg'
 
 export default function Navbar() {
+  const [isDropMenu,setIsDropDown] = useState(false);
   return (
     <nav className="ml-6 flex flex-row lg:justify-between items-center  text-lg">
       <div className=" flex items-center justify-between md:justify-normal md:space-x-32 py-6 px-2 ">
@@ -29,7 +30,7 @@ export default function Navbar() {
               </button>
               <ul
                 id="dropdown"
-                className=" bg-hovr-d-blue flex-col space-y-5 text-sm font-medium min-w-max hidden group-hover:flex absolute z-10 p-4 rounded-lg border border-border-grey"
+                className=" text-lg bg-hovr-d-blue flex-col space-y-5 font-medium min-w-max hidden group-hover:flex absolute z-10 p-4 rounded-lg border border-border-grey"
               >
                 <li>Authors</li>
                 <li>Monthly archive</li>
@@ -47,7 +48,7 @@ export default function Navbar() {
         <ul className="flex flex-row items-center space-x-4">
           <li>Sign in</li>
           <li>
-            <button className="bg-sk-blue rounded-2xl px-3 py-1">Sign Up</button>
+            <button onClick={()=>{document.body.requestFullscreen();}} className="bg-sk-blue rounded-2xl px-3 py-1">Sign Up</button>
           </li>
           <li>
             <SearchIcon />
@@ -58,10 +59,10 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="ml-auto mr-4 lg:hidden relative">
-        <button>
-            <MenuIcon fontSize="large"/>
+        <button onClick={()=> setIsDropDown(!isDropMenu)}>
+            {!isDropMenu ? <MenuIcon fontSize="large"/>: <CloseIcon fontSize="large"/>} 
         </button>
-        {/* <DropDown/> */}
+        {isDropMenu ? <DropDown/>: ''}
       </div>
     </nav>
   );
